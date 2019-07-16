@@ -1,42 +1,133 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>CSUBU Lecturers</title>
-    <style>
-    .avatar {
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.avatar {
         vertical-align: middle;
         width: 50px;
         height: 50px;
         border-radius: 50%;
-    }
-    </style>
-  </head>
-  <body background="http://picsum.photos/1024/1024?grayscle">
+}
+* {
+  box-sizing: border-box;
+}
 
-      <div>
-          
-          <h1>Gallery Application</h1>
-          
-      </div>
-    <div>
-      <img class="avatar" src="http://picsum.photos/200" alt="Dr.K">
-      <img class="avatar" src="http://picsum.photos/200" alt="Assist.Prof.Chayaporn">
-      <img class="avatar" src="http://picsum.photos/200" alt="Dr.Tossaporn">
-      <img class="avatar" src="http://picsum.photos/200" alt="Dr.Phaichayon">
-      <img class="avatar" src="http://picsum.photos/200" alt="Dr.Woody">
-      <img class="avatar" src="http://picsum.photos/200" alt="Aj.Wasana">
-      <img class="avatar" src="http://picsum.photos/200" alt="Dr.Paul">
-      <img class="avatar" src="http://picsum.photos/200" alt="Dr.Suphawadee">
-      <img class="avatar" src="http://picsum.photos/200" alt="Aj.Wayo">
-    </div>
-    <div>
-        <img class="mainpic" src="https://1.bp.blogspot.com/-1cmsin_I2lM/WDug-rAGRKI/AAAAAAAD51g/pIJ1BbIaLBAJJUfxUOg_J3rJ32B2zcLKQCLcB/s1600/AS001417_04.gif" alt="main pic">
-    </div>
-    <footer>
-      Node <script>document.write(process.versions.node)</script>,
-      Chrome <script>document.write(process.versions.chrome)</script>,
-      and Electron <script>document.write(process.versions.electron)</script>.
+body {
+  margin: 0;
+  font-family: Itim;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 10%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body background="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Jinzu_River.jpg/800px-Jinzu_River.jpg">
+
+<div style="text-align:center">
+  <h1> Gallery Application</h1>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img class="avatar" src="http://www.tlcthai.com/horo/wp-content/uploads/2012/03/%E0%B8%97%E0%B8%B3%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%9D%E0%B8%B1%E0%B8%99%E0%B8%99.jpg" alt="noface1" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img class="avatar" src="http://kidsnews.bectero.com/upload/files/images/9(83).jpg" alt="noface2" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img class="avatar" src="https://www.touronthai.com/gallery/photo/20000014/459-07.jpg" alt="noface3" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img class="avatar" src="http://adeq.or.th/wp-content/uploads/2019/01/%E0%B8%99%E0%B8%81%E0%B8%99%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%AD%E0%B9%88%E0%B8%99%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99.jpg" alt="noface4" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img class="avatar" src="https://www.touronthai.com/uploads/2017-05/1494311363.jpg" alt="noface5" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img class="avatar" src="https://www.touronthai.com/gallery/photo/20000014/459-08.jpg" alt="noface6" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img class="avatar" src="http://www.northbirding.com/wp-content/uploads/2017/11/Birdcharms.jpg" alt="noface7" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img class="avatar" src="https://ngthai.com/app/uploads/2017/07/1-2.jpg" alt="noface8" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img class="avatar" src="http://image.downloadwap.co.uk/wallpapers/p2ls/26/animals/UVlsvrPr.jpg" alt="noface9" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img class="avatar" src="http://3.bp.blogspot.com/_f1fb3wgPgWI/TUw3IHNIGyI/AAAAAAAAAA8/DIs-GKD8yRA/s1600/%25E0%25B8%2599%25E0%25B8%2581%25E0%25B9%2580%25E0%25B8%2588%25E0%25B9%2587%25E0%25B8%2594%25E0%25B8%25AA%25E0%25B8%25B5.jpg" alt="noface10" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:90%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+<footer>
+      <script>document.write(process.versions.node)</script>
+     <script>document.write(process.versions.chrome)</script>
+     <script>document.write(process.versions.electron)</script>
     </footer>
-  </body>
+</body>
 </html>
